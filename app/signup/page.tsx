@@ -1,13 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { supabase } from '../../lib/supabase'
 
 const inputClass = "w-full border border-zinc-200 px-4 py-3 text-sm outline-none focus:border-black transition-colors"
 
-export default function SignupPage() {
+function SignupContent() {
   const searchParams = useSearchParams()
   const initialRole = searchParams.get('role') as 'client' | 'lawyer' | null
   const [role, setRole] = useState<'client' | 'lawyer' | null>(initialRole)
@@ -193,5 +193,13 @@ export default function SignupPage() {
         </div>
       </main>
     </div>
+  )
+}
+
+export default function SignupPage() {
+  return (
+    <Suspense>
+      <SignupContent />
+    </Suspense>
   )
 }
