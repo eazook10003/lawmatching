@@ -24,7 +24,7 @@ export default function LawyerDashboardPage() {
   }, [])
 
   return (
-    <div className="px-10 py-12">
+    <div className="px-4 sm:px-10 py-8 sm:py-12">
       <h1 className="text-3xl font-bold mb-1">내 수임</h1>
       <p className="text-base text-zinc-400 mb-10">현재 진행 중인 수임 사건을 확인하세요</p>
 
@@ -39,7 +39,7 @@ export default function LawyerDashboardPage() {
 
       <div className="flex flex-wrap gap-6">
         {engagements.map(e => (
-          <div key={e.id} className="border border-zinc-100 p-8 w-96 transition-all duration-200 hover:scale-105 hover:border-zinc-400 hover:bg-zinc-50 hover:shadow-md cursor-default">
+          <div key={e.id} className="border border-zinc-100 p-6 sm:p-8 w-full sm:w-96 transition-all duration-200 hover:scale-105 hover:border-zinc-400 hover:bg-zinc-50 hover:shadow-md cursor-default">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-base border border-zinc-200 px-3 py-1 text-zinc-500">
                 {e.cases?.category}

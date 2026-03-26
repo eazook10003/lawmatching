@@ -25,7 +25,7 @@ export default function DashboardPage() {
   }, [])
 
   return (
-    <div className="px-10 py-12">
+    <div className="px-4 sm:px-10 py-8 sm:py-12">
       <div className="flex items-start justify-between gap-4 mb-1">
         <h1 className="text-3xl font-bold">내 사건</h1>
         <Link
@@ -48,7 +48,7 @@ export default function DashboardPage() {
 
       <div className="flex flex-wrap gap-6">
         {cases.map(c => (
-          <div key={c.id} className="border border-zinc-100 p-8 w-96 transition-all duration-200 hover:scale-105 hover:border-zinc-400 hover:bg-zinc-50 hover:shadow-md cursor-default">
+          <div key={c.id} className="border border-zinc-100 p-6 sm:p-8 w-full sm:w-96 transition-all duration-200 hover:scale-105 hover:border-zinc-400 hover:bg-zinc-50 hover:shadow-md cursor-default">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <span className="text-base border border-zinc-200 px-3 py-1 text-zinc-500">{c.category}</span>

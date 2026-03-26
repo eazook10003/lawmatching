@@ -12,16 +12,16 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
-      <header className="px-10 py-6 border-b border-zinc-100">
+      <header className="px-4 sm:px-10 py-6 border-b border-zinc-100">
         <span className="text-xl font-bold tracking-tight">로매칭</span>
       </header>
 
       {/* Hero */}
-      <main className="flex flex-col items-center justify-center px-6 text-center pt-24 pb-20">
-        <h1 className="text-5xl font-bold tracking-tight mb-4 leading-tight">
+      <main className="flex flex-col items-center justify-center px-6 text-center pt-16 sm:pt-24 pb-16 sm:pb-20">
+        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4 leading-tight">
           법률 문제,<br />빠르게 해결하세요
         </h1>
-        <p className="text-zinc-500 text-lg mb-12 max-w-md">
+        <p className="text-zinc-500 text-base sm:text-lg mb-10 sm:mb-12 max-w-md">
           검증된 변호사와 간편하게 연결되는 법률 매칭 서비스
         </p>
 
