@@ -24,42 +24,40 @@ export default function LawyerDashboardPage() {
   }, [])
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-16">
-      <div className="mb-10">
-        <h1 className="text-2xl font-bold mb-1">내 수임</h1>
-        <p className="text-sm text-zinc-400">현재 진행 중인 수임 사건을 확인하세요</p>
-      </div>
+    <div className="px-10 py-12">
+      <h1 className="text-3xl font-bold mb-1">내 수임</h1>
+      <p className="text-base text-zinc-400 mb-10">현재 진행 중인 수임 사건을 확인하세요</p>
 
       {engagements.length === 0 && (
-        <div className="border border-dashed border-zinc-200 p-12 text-center">
-          <p className="text-sm text-zinc-400 mb-4">아직 수임된 사건이 없습니다</p>
-          <a href="/cases" className="text-xs underline underline-offset-2 text-zinc-400 hover:text-black transition-colors">
+        <div className="border border-dashed border-zinc-200 p-12 text-center max-w-sm">
+          <p className="text-base text-zinc-400 mb-4">아직 수임된 사건이 없습니다</p>
+          <a href="/cases" className="text-sm underline underline-offset-2 text-zinc-400 hover:text-black transition-colors">
             사건 목록 보기 →
           </a>
         </div>
       )}
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-wrap gap-6">
         {engagements.map(e => (
-          <div key={e.id} className="border border-zinc-100 p-6">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs border border-zinc-200 px-2 py-0.5 text-zinc-500">
+          <div key={e.id} className="border border-zinc-100 p-8 w-96 transition-all duration-200 hover:scale-105 hover:border-zinc-400 hover:bg-zinc-50 hover:shadow-md cursor-default">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-base border border-zinc-200 px-3 py-1 text-zinc-500">
                 {e.cases?.category}
               </span>
-              <span className="text-xs text-zinc-300">
+              <span className="text-base text-zinc-300">
                 {new Date(e.created_at).toLocaleDateString('ko-KR')}
               </span>
             </div>
 
-            <p className="text-sm text-zinc-700 leading-relaxed mb-4">{e.cases?.description}</p>
+            <p className="text-lg text-zinc-700 leading-relaxed mb-6">{e.cases?.description}</p>
 
             <div className="flex items-center justify-between">
-              <span className="text-xs text-zinc-400">
+              <span className="text-sm text-zinc-400">
                 수임 금액: {e.agreed_price?.toLocaleString() ?? '미정'}원
               </span>
               <Link
                 href={`/chat/${e.id}`}
-                className="text-xs underline underline-offset-2 text-black"
+                className="text-sm underline underline-offset-2 text-black"
               >
                 채팅 시작 →
               </Link>
